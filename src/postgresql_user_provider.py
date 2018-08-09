@@ -213,8 +213,8 @@ class PostgreSQLUser(ResourceProvider):
         with self.connection.cursor() as cursor:
             cursor.execute('CREATE ROLE %s LOGIN ENCRYPTED PASSWORD %s', [
                 AsIs(self.user), self.user_password])
-                cursor.execute('GRANT rds_superuser TO %s', [
-                    AsIs(self.user)])
+            cursor.execute('GRANT rds_superuser TO %s', [
+                AsIs(self.user)])
 
     def create_database(self):
         log.info('create database %s', self.user)
