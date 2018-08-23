@@ -6,6 +6,7 @@ from psycopg2.extensions import AsIs
 from cfn_resource_provider import ResourceProvider
 
 log = logging.getLogger()
+log.setLevel(logging.DEBUG)
 
 request_schema = {
     "$schema": "http://json-schema.org/draft-04/schema#",
